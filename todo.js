@@ -39,6 +39,6 @@ app.get("/delete/:index", (request, response) => {
 })
 
 
-app.listen(3000, function () { //écoute sur le port 3000
-    console.log("Server is running on port 3000")
+app.listen(80, function () { //écoute sur le port 3000
+    console.log("Server is running on port 80")
 });
