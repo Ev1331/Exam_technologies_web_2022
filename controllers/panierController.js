@@ -52,20 +52,26 @@ exports.panierAdd = function (req, res) {
 
 exports.panierDelete = function (req, res) {
     console.log(inscriptions)
-    for (let i = 0; i < formationList; i++) {
+    console.log(formationList)
+    console.log("----- FOR -----")
+    //inscriptions.splice(inscriptions[i],1);
+    for (let i = 0; i < inscriptions.length; i++) {
+        console.log("i")
+        console.log(i)
+        console.log("inscriptions[i].ID")
         console.log(inscriptions[i].ID);
+        console.log("req.params.num")
         console.log(req.params.num);
         if (inscriptions[i].ID == req.params.num) {
             console.log("boucle\n\n");
-            inscriptions.splice(inscriptions.indexOf(inscriptions[i]));
+            inscriptions.splice(i,1);
             console.log(inscriptions);
             console.log(i);
         }
-        break;
     }
     //console.log(i);
-    //res.render('../views/panier.ejs', {formationList : inscriptions});
-    res.redirect('/');
+    res.render('../views/panier.ejs', {formationList : inscriptions});
+    //res.redirect('/');
 };
 
 
