@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Academy</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>IT Academy</h1>
+    <h2>Mon panier</h2>
+
+    <form method="post" action='/login'>
+        <button type='submit'> Se connecter</button>
+    </form>
+    <form method="get" action='/'>
+        <button type='submit'> Retour</button>
+    </form>
+    <form method="post" action='/confirm'>
+        <button type='submit'> Confirmer la commande</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+        </tr>
+        <% for( let index=0; index < formationList.length; index++ ) { %>
+
+            <tr> <!-- Rangée -->
+                <td> <!-- Cellule -->
+                    <%= formationList[index].ID %>
+                </td>
+                <td> <!-- Cellule -->
+                    <%= formationList[index].Nom %>
+                </td>
+                <td>
+                    <%= formationList[index].Prix %>
+                </td>
+                <td>
+                    <%= formationList[index].DateDebut %>
+                </td>
+                <td>
+                    <%= formationList[index].DateFin %>
+                </td>
+                <td>
+                    <form method="post" action="/desinscription/<%=formationList[index].ID%>">
+                        <button type='submit'> Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+
+            <% } %>
+    </table>
+</body>
+
+</html>
