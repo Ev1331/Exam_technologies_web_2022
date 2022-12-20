@@ -6,7 +6,7 @@ let app = express();
 
 app.use(express.urlencoded({ extended: true })) //Pour pouvoir décoder le body
 
-var mysql = require("mysql");
+var mysql = require("mysql2");
 //Database connection
 
 var connection = mysql.createConnection({
