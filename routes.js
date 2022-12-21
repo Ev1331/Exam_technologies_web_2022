@@ -1,14 +1,22 @@
 let express = require('express');
 let router = express.Router();
 
-let formationController = require("./controllers/formationController");
-let panierController = require("./controllers/panierController")
-let connectionController = require("./controllers/connectionController");
+let reservationController = require("./controllers/reservationController");
 
 //Liste des routes vers les contrôleursµ
-router.get('/', (req, res) => res.redirect('/formations'));
+router.get('/', (req, res) => res.redirect('/home'));
+
+router.get('/home', reservationController.home);
+router.post('/savedestination', reservationController.saveDestination);
+router.post('/savevoyageurs', reservationController.saveVoyageurs);
+router.get('/confirmation', reservationController.confirmReservation);
 
 
+
+
+
+
+/*
 router.get('/formations', formationController.formationList);
 
 router.post('/panier', panierController.panier);
@@ -21,7 +29,7 @@ router.post('/error', connectionController.login);
 
 router.post('/connection', connectionController.openSession);
 router.post('/connectionerror', connectionController.openSession);
-
+*/
 
 
 

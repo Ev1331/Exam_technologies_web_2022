@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Validation</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1>Validation des réservations</h1>
+
+        <div id="destination">
+            <h3>Destination : <%= reservation.destination %> </h3>
+        </div>
+
+        <div id="persons">
+            <h3>Liste des passagers</h3>
+            <ul>
+                <% for( let i = 0; i < listeVoyageurs.length; i++ ) { %>
+                <li>
+                    <%= listeVoyageurs[i].nom %>: 
+                        <%= listeVoyageurs[i].age %> ans
+                </li>
+                <% } %>
+
+            </ul>
+        </div>
+        <form>
+            <div>
+                <input type="submit" value="Etape suivante" formaction="/confirmation" formmethod="get">
+                <input type="submit" value="Annuler la réservation" formaction="/" formmethod="get">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

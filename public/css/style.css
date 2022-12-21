@@ -3,18 +3,42 @@ th {
   border: 1px solid lightgray;
 }
 
-body {
+#content {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-h1,
-h2 {
-  color: darkblue;
-}
-
-button {
-  color: darkblue;
-  border-radius: 5px;
   background-color: lightblue;
-  border-color: lightblue;
+  padding: 10px; /*Marges intérieures*/
+  margin: 10px; /*Marges extérieures*/
+  border: solid; /*Style de bordure*/
+  border-width: 1px;
+  font-size: 12px;
+  height: 300px;
+  width: 500px;
+}
+
+input,
+label {
+  text-align: left;
+  margin: 10px; /*Marges intérieures*/
+}
+
+#form1 {
+  width: 400px;
+  padding: 10px; /*Marges intérieures*/
+  margin: 10px; /*Marges extérieures*/
+  border: solid; /*Style de bordure*/
+  border-width: 1px;
+  text-align: justify;
+}
+
+#confirmation {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+  padding: 10px; /*Marges intérieures*/
+  margin: 10px; /*Marges extérieures*/
+  border: solid; /*Style de bordure*/
+  border-width: 1px;
+  font-size: 12px;
+  height: 300px;
+  width: 500px;
+  text-align: center;
 }
