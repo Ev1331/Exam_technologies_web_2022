@@ -7,7 +7,7 @@ const { render } = require('ejs');
 
 var connection = mysql.createConnection({
     host: "localhost",
-    user: "root",
+    user: "mysqlnodejs",
     password: "root",
     database: "products",
 });
