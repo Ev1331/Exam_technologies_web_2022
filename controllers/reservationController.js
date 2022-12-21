@@ -5,7 +5,6 @@ let listeVoyageurs = [];
 let listeAges = [];
 let listeNoms = [];
 let listeReservations = [];
-let assurance;
 
 // ----------------- Connection MySQL -----------------
 
@@ -15,7 +14,7 @@ const { render } = require('ejs');
 
 var connection = mysql.createConnection({
     host: "localhost",
-    user: "root",
+    user: "mysqlnodejs",
     password: "root",
     database: "examen",
 });
@@ -30,14 +29,6 @@ exports.home = function (req, res) {
 }
 
 exports.saveDestination = function (req, res) {
-    /*
-    if (req.body.assurance == 'on') {
-        assurance = 1;
-    }
-    else {
-        assurance = 0;
-    }
-    */
     let reservation = new Reservation(req.body.destination, req.body.nbseat, req.body.assurance);
     console.log(reservation);
     listeReservations.push(reservation);
