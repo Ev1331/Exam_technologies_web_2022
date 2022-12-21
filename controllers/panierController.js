@@ -1,65 +1,41 @@
+
+let Formation = require('../models/formationModel');
+
 //Connection à MySQL
-let Item = require('../models/itemModel');
-
 var mysql = require("mysql");
-const { render } = require('ejs');
-
 
 var connection = mysql.createConnection({
     host: "localhost",
-    user: "mysqlnodejs",
+    user: "root",
     password: "root",
-    database: "products",
+    database: "users",
 });
 connection.connect(function (error) { if (error) console.log(error); });
 
-let itemList = [];
+let formationList = [];
+let inscriptions = [];
+let panier = [];
 
-// Récupération de la lste des formations MySQL dans une liste
-connection.query("select * from shoppingitems", function (error, result) {
+//Ajouter formation au panier
+
+/*
+let formation = {"Nom":req.body.Nom};
+connection.query("INSERT INTO panier SET ?", formation, function (err, result) {
+    if (err) console.log(err);
+    res.redirect('/');
+});
+*/
+
+
+// Récupération de la lste des formations MySQL dans une liste formationList
+connection.query("select * from formation", function (error, result) {
     if (error) console(error);
     for (let a = 0; a < result.length; a++) {
-        console.log(result)
-        let item = new Item(result[a].id_item, result[a].name, result[a].quantity, result[a].purchased);
-        itemList.push(item);
+        let formation = new Formation(result[a].ID, result[a].Nom, result[a].Prix, result[a].DateDebut, result[a].DateFin);
+        formationList.push(formation);
     }
 });
 
-exports.shop = function (req, res) {
-    res.render('../views/shop.ejs', { itemList: itemList });
-    console.log('EXPORT !')
-    console.log(itemList);
-}
-
-
-exports.addItem = function (req, res) {
-
-}
-
-exports.newItem = function (req, res) {
-    res.render('../views/addItem.ejs');
-}
-
-exports.saveItem = function (req, res) {
-    let item = {"id_item": req.body.id_item, "name": req.body.name, "quantity": req.body.quantity };
-    connection.query("INSERT INTO shoppingitems SET ?", item, function (err, result) {
-        if (err) console.log(err);
-        res.render('/views/shop.ejs');
-    });
-}
-   
-
-exports.deleteItem = function (req, res) {
-    for (let i = 0; i < itemList.length; i++) {
-        if (itemList[i].id_item == req.params.num) {
-            itemList.splice(i,1);
-        }
-    }
-    res.render('../views/shop.ejs', {itemList : itemList});
-};
-
-
-/* 
 
 exports.panier = function (req, res) {
     res.render('../views/panier.ejs', { formationList: inscriptions });//On renvoie le render (=la vue) avec les paramètres à insérer dans l'ejs
@@ -127,5 +103,3 @@ exports.confirmOrder = function (req, res) {
         panier = [];
     };
 };
-
-*/

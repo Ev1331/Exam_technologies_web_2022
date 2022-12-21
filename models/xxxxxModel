@@ -1,13 +1,5 @@
-class Item {
-    constructor(id_item, name, quantity, purchased){
-        this.id_item = id_item;
-        this.name = name;
-        this.quantity = quantity;
-        this.purchased = purchased;
-    }
-}
 
-module.exports = Item;
+
 
 /*
 class Formation {

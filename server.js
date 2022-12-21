@@ -22,7 +22,7 @@ app.use('/', router);
 app.use(express.static('public'))
 
 //Launch app to listen to specified port
-app.listen(80, function () {
-    console.log("Running on port 80"); 
+app.listen(8000, function () {
+    console.log("Running on port 8000"); 
 })
 
