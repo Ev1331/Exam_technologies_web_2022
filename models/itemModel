@@ -1,0 +1,33 @@
+class Item {
+    constructor(id_item, name, quantity, purchased){
+        this.id_item = id_item;
+        this.name = name;
+        this.quantity = quantity;
+        this.purchased = purchased;
+    }
+}
+
+module.exports = Item;
+
+/*
+class Formation {
+    constructor(ID, Nom, Prix, DateDebut, DateFin){
+        this.ID = ID
+        this.Nom = Nom;
+        this.Prix = Prix;
+        this.DateDebut = DateDebut;
+        this.DateFin = DateFin;
+    }
+}
+
+module.exports = Formation;
+
+class User{
+    constructor(lastname, firstname) {
+        this.lastname = lastname;
+        this.firstname = firstname;
+    }
+}
+
+module.exports = User;
+*/

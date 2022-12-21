@@ -1,0 +1,20 @@
+td,
+th {
+  border: 1px solid lightgray;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  color: darkblue;
+}
+
+button {
+  color: darkblue;
+  border-radius: 5px;
+  background-color: lightblue;
+  border-color: lightblue;
+}

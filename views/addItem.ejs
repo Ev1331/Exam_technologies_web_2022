@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To-do list MySQL</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+
+    <h1>Ajouter une tâche</h1>
+    <form action="/sauver" method="POST">
+       <h2>Nouvel article:</h2>  
+        <input type="text" name="name" value="" placeholder="Nom"/> <br />
+        <input type="text" name="quantity" value="" placeholder="Quantité"/> <br />
+        <input type="hidden" name="id_item" value="" />
+        <input type="submit" name="save" value="Sauver" /> <br />
+        <a href="/boutique"><input type="button" value="Retour à la liste" /></a>
+    </form>
+
+
+
+</body>
+
+</html>
